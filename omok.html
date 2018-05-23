@@ -1,22 +1,733 @@
 <!DOCTYPE html>
-<html lang="ko">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="./omok.css">
-    <title>오목 게임</title>
+    <title>오목</title>
+    <link rel="stylesheet" href="./index.scss">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </head>
 
 <body>
-    <h1>오목 게임</h1>
-    <p>오목판의 크기를 설정해 주세요</p>
-    <p>기본값은 19로 바둑판의 크기와 같습니다.</p>
-    <input type="text" id="ea" value="19">
-    <input type="button" value="시작" onclick="viewOmokPan();" />
-    <span id="omokArea" class="omokPan"></span>
-    <script src="./omok.js"></script>
+    <div class="container">
+        <div class="nav">
+            오목한판하고 쪼꼼만 이따가
+        </div>
+        <div class="empty"></div>
+        <div class="board">
+            <div class="board__row">
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+            </div>
+            <div class="board__row">
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+            </div>
+            <div class="board__row">
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+            </div>
+            <div class="board__row">
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+            </div>
+            <div class="board__row">
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+            </div>
+            <div class="board__row">
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+            </div>
+            <div class="board__row">
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+            </div>
+            <div class="board__row">
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+            </div>
+            <div class="board__row">
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+            </div>
+            <div class="board__row">
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+            </div>
+            <div class="board__row">
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+            </div>
+            <div class="board__row">
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+            </div>
+            <div class="board__row">
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+            </div>
+            <div class="board__row">
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+            </div>
+            <div class="board__row">
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+                <div class="board__col">
+                    <div class="col__grid"></div>
+                </div>
+            </div>
+        </div>
+        <br/>
+        <div class="currentTurn"></div>
+    </div>
+    <div class="footer">Made by Kimhaneol, moong2</div>
+    <script src="./index.js"></script>
 </body>
 
 </html>
