@@ -12,7 +12,7 @@
 ### 게임하러 가기
 # Gomoku
 
-a href = ["Gomoku"](https://en.wikipedia.org/wiki/Gomoku).
+["Gomoku"](https://en.wikipedia.org/wiki/Gomoku).
 
 Gomuku is a game in which players alternate turns placing a stone of their color on an empty intersection. The winner is the first player to form an unbroken chain of five stones horizontally, vertically, or diagonally.
 
