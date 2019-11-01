@@ -49,5 +49,5 @@ Undoing a turn makes the stone put on the field during the previous turn disappe
 
 
 ##How to play
-https://omok-wait-a-minute.netify.com/
+https://omok-wait-a-minute.netlify.com/
 
