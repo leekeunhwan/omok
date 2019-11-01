@@ -27,8 +27,10 @@ Gomuku is a game in which players alternate turns placing a stone of their color
 The rule of three and three bans a move that simultaneously forms two open rows of three stones (rows not blocked by an opponent's stone at either end).
 Since there was a method which guarantees the player who starts first(black) to win, 3x3 was banned as a rule.
 
-![Screenshot](https://user-images.githubusercontent.com/50646019/68020292-642ca780-fce1-11e9-9c95-c1e246f26aa3.png)
+
 ![Screenshot](https://user-images.githubusercontent.com/50646019/68020298-67c02e80-fce1-11e9-9b4d-125b8cf22d8a.png) 
+![Screenshot](https://user-images.githubusercontent.com/50646019/68020292-642ca780-fce1-11e9-9c95-c1e246f26aa3.png)
+
 
 (As shown above, if the black puts the stone in the marked place, no matter if  which way the white side blocks, the black side wins.)
 
