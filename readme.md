@@ -48,6 +48,6 @@ Undoing a turn makes the stone put on the field during the previous turn disappe
 
 
 
-## How to play
+## Play game
 https://omok-wait-a-minute.netlify.com/
 
